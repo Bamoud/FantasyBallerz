@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #3d3b3b;
+    text-align: center;
+  }
+  
+  h1, h2, h3, h4 {
+    color: #8fb0c8;
+  }
+  
+  #title {
+    font-weight: bold;
+  }
+  
+  #last-update {
+    font-weight: bold;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    color: #8fb0c8;
+  }

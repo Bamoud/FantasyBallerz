@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasy Ballerz</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <h1 id="title">Create a Fantasy Ballerz Account</h1>
+
+  
+  <form  method="post" action="" id="Ballerz-account">
+    <fieldset>
+      <legend>Name</legend>
+      <label for="name" id="name-label">
+        Full Name: <input placeholder="First Last" type="text" id="name" required>
+      </label>
+  
+     
+      <label for="email" id="email-label">
+        Email Address: <input type="email" placeholder="@" id="email" required>
+      </label>
+  
+     
+      <label for="number" id="number-label">
+        Age (8+) <input type="number" id="number" min="8" max="100" required>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Create a password</legend>
+      <label id="password-label">
+        <input type="text" id="password" placeholder="Enter password" required>
+        <input type="text" id="password" placeholder="re-enter password" required>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>What is your gender?</legend>
+      <label>
+        Male <input type="radio" name="gender" value="male" required>
+      </label>
+      <label>
+        Female <input type="radio" name="gender" value="female" required>
+      </label>
+    </fieldset>
+    <fieldset>
+      <label for="terms-and-conditions">
+        <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="T&C.html">terms and conditions</a>
+      </label>
+
+
+    
+      <input type="submit" value="submit" id="submit" required>
+    </fieldset>
+
+   
+  </form>
+</body>
+</html>
+
+
+
+
+
+

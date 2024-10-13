@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 /**
  * Abstract class representing a player with basic attributes like name, position, 
- * and rating. This class also contains a nested class `stats` to store performance statistics.
+ * rating, height, weight, and ability. This class also contains a nested class `stats` 
+ * to store performance statistics.
  */
 abstract class myplayer {
     // Player's name
@@ -15,6 +16,12 @@ abstract class myplayer {
     private String position;
     // Player's rating (e.g., skill level)
     private int rating;
+    // Player's height
+    private double height;
+    // Player's weight
+    private double weight;
+    // Player's special ability
+    private String ability;
 
     /**
      * Default constructor initializing fields with default values.
@@ -23,6 +30,9 @@ abstract class myplayer {
         this.name = null;
         this.position = null;
         this.rating = -1;
+        this.height = -1.0;
+        this.weight = -1.0;
+        this.ability = null;
     }
 
     /**
@@ -31,11 +41,17 @@ abstract class myplayer {
      * @param name     Name of the player.
      * @param position Position of the player on the team.
      * @param rating   Player's skill rating.
+     * @param height   Player's height.
+     * @param weight   Player's weight.
+     * @param ability  Player's special ability.
      */
-    public myplayer(String name, String position, int rating) {
+    public myplayer(String name, String position, int rating, double height, double weight, String ability) {
         this.name = name;
         this.position = position;
         this.rating = rating;
+        this.height = height;
+        this.weight = weight;
+        this.ability = ability;
     }
 
     /**
@@ -48,6 +64,15 @@ abstract class myplayer {
     }
 
     /**
+     * Setter method for the player's name.
+     * 
+     * @param name The player's name.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
      * Abstract method to get the position of the player. 
      * This must be implemented by subclasses.
      * 
@@ -56,12 +81,83 @@ abstract class myplayer {
     abstract String getPosition();
 
     /**
+     * Abstract method to set the position of the player. 
+     * This must be implemented by subclasses.
+     * 
+     * @return The position of the player.
+     */
+    abstract String setPosition();
+
+    /**
      * Getter method for the player's rating.
      * 
      * @return The player's rating.
      */
     public int getRating() {
         return this.rating;
+    }
+    
+    /**
+     * Setter method for the player's rating.
+     * 
+     * @param rating The player's rating.
+     */
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    /**
+     * Getter method for the player's height.
+     * 
+     * @return The player's height.
+     */
+    public double getHeight() {
+        return this.height;
+    }
+
+    /**
+     * Setter method for the player's height.
+     * 
+     * @param height The player's height.
+     */
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    /**
+     * Getter method for the player's weight.
+     * 
+     * @return The player's weight.
+     */
+    public double getWeight() {
+        return this.weight;
+    }
+
+    /**
+     * Setter method for the player's weight.
+     * 
+     * @param weight The player's weight.
+     */
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    /**
+     * Getter method for the player's special ability.
+     * 
+     * @return The player's special ability.
+     */
+    public String getAbility() {
+        return this.ability;
+    }
+
+    /**
+     * Setter method for the player's special ability.
+     * 
+     * @param ability The player's special ability.
+     */
+    public void setAbility(String ability) {
+        this.ability = ability;
     }
 
     /**
@@ -73,7 +169,7 @@ abstract class myplayer {
         Scanner input = new Scanner(System.in); // Create a Scanner for user input
         String choice = input.nextLine(); // Read the input string
         input.close(); // Close the scanner to prevent resource leak
-        return choice.toLowerCase().equals( "yes"); // Compare input to "yes" (incorrect comparison)
+        return choice.toLowerCase().equals("yes"); // Compare input to "yes"
     }
 
     /**
@@ -129,12 +225,30 @@ abstract class myplayer {
         }
 
         /**
+         * Setter method for points scored.
+         * 
+         * @param points The points scored by the player.
+         */
+        public void setPoints(int points) {
+            this.points = points;
+        }
+
+        /**
          * Getter method for rebounds collected.
          * 
          * @return The rebounds collected by the player.
          */
         public int getRebounds() {
             return this.rebounds;
+        }
+
+        /**
+         * Setter method for rebounds collected.
+         * 
+         * @param rebounds The rebounds collected by the player.
+         */
+        public void setRebounds(int rebounds) {
+            this.rebounds = rebounds;
         }
 
         /**
@@ -147,12 +261,30 @@ abstract class myplayer {
         }
 
         /**
+         * Setter method for steals made.
+         * 
+         * @param steals The steals made by the player.
+         */
+        public void setSteals(int steals) {
+            this.steals = steals;
+        }
+
+        /**
          * Getter method for blocks performed.
          * 
          * @return The blocks performed by the player.
          */
         public int getBlocks() {
             return this.blocks;
+        }
+
+        /**
+         * Setter method for blocks performed.
+         * 
+         * @param blocks The blocks performed by the player.
+         */
+        public void setBlocks(int blocks) {
+            this.blocks = blocks;
         }
 
         /**
@@ -163,5 +295,15 @@ abstract class myplayer {
         public int getAssists() {
             return this.assists;
         }
+
+        /**
+         * Setter method for assists made.
+         * 
+         * @param assists The assists made by the player.
+         */
+        public void setAssists(int assists) {
+            this.assists = assists;
+        }
     }
 }
+

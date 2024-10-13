@@ -2,7 +2,6 @@ import java.util.*;
 import java.io.*;
 import java.lang.Math;
 
-public class GameDesign;
 
 /* Bashir Amoud 
  * This code will make all of the functions with the game,
@@ -13,7 +12,7 @@ public class GameDesign;
 
  */
  
- public class MyPlayer {
+ public class originalfunctions {
      private double height;
      private int weight;
      private String ability;
@@ -41,7 +40,7 @@ public class GameDesign;
          String ability = scanner.next();
          scanner.nextLine();
  
-         MyPlayer player = new MyPlayer();
+         originalfunctions player = new originalfunctions();
          String position = player.playerPos(height, weight, ability);
          
          System.out.println("Player's position: " + position);
@@ -53,7 +52,7 @@ public class GameDesign;
          System.out.println("How many days a week does the player go to the gym? ");
          int gymVisits = scanner.nextInt();
  
-         int skillLevel = MyPlayer.skillLvL(gymVisits, diet);
+         int skillLevel = originalfunctions.skillLvL(gymVisits, diet);
  
          System.out.println("Your player's skill level is: " + skillLevel);
          

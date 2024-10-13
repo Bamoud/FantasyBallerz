@@ -73,7 +73,7 @@ abstract class myplayer {
         Scanner input = new Scanner(System.in); // Create a Scanner for user input
         String choice = input.nextLine(); // Read the input string
         input.close(); // Close the scanner to prevent resource leak
-        return choice.toLowerCase() == "yes"; // Compare input to "yes" (incorrect comparison)
+        return choice.toLowerCase().equals( "yes"); // Compare input to "yes" (incorrect comparison)
     }
 
     /**

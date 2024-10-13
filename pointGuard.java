@@ -2,10 +2,10 @@
 
 import java.util.Random;
 
-public class guard extends myplayer {
+public class pointGuard extends myplayer {
 
 
-    public guard() {
+    public pointGuard() {
         super();
         setPosition("point guard");
     }

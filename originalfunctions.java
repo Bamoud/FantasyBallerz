@@ -177,13 +177,11 @@ import java.lang.Math;
     
     
  }
-     public static String chooseNBATeam() {
-       
-         Random random = new Random();
-         int index = random.nextInt(NBA_TEAMS.length);
-         return NBA_TEAMS[index];
-         
- }
+        public String chooseNBATeam() {
+        Random random = new Random();
+        int index = random.nextInt(NBA_TEAMS.length);
+        return NBA_TEAMS[index];
+        }
      /** 
        * this method saves yeach years stats to file.
        * @param year int gets the year for the stats.

@@ -45,9 +45,8 @@ abstract class myplayer {
      * @param weight   Player's weight.
      * @param ability  Player's special ability.
      */
-    public myplayer(String name, String position, int rating, double height, double weight, String ability) {
+    public myplayer(String name, int rating, double height, double weight, String ability) {
         this.name = name;
-        this.position = position;
         this.rating = rating;
         this.height = height;
         this.weight = weight;
@@ -78,7 +77,9 @@ abstract class myplayer {
      * 
      * @return The position of the player.
      */
-    abstract String getPosition();
+    public String getPosition(){
+        return this.position;
+    }
 
     /**
      * Abstract method to set the position of the player. 
@@ -86,7 +87,9 @@ abstract class myplayer {
      * 
      * @return The position of the player.
      */
-    abstract String setPosition();
+    public void setPosition(String position){
+        this.position = position;
+    }
 
     /**
      * Getter method for the player's rating.

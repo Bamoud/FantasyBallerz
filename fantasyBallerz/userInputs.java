@@ -1,10 +1,9 @@
-//package fantasyBallerz;
+package fantasyBallerz;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import java.util.Random;
-import java.util.Scanner;
+//import stats;
 
 /**
  * A class that extends `myplayer` and implements `storyLine`. 
@@ -91,12 +90,12 @@ public class userInputs extends myplayer implements storyLine {
                     System.out.println("Projected draft pick: " + draftpick + " to the " + draftedTeam);
 
                     // Generate and display player statistics for the year
-                    PlayerStatistics playerStats = new PlayerStatistics();
+                    stats playerStats = new stats();
                     System.out.println("Your Stats for this year:");
-                    System.out.println("Points scored: " + playerStats.generatePoints());
-                    System.out.println("Assists made: " + playerStats.generateAssists());
-                    System.out.println("Blocks made: " + playerStats.generateBlocks());
-                    System.out.println("Steals made: " + playerStats.generateSteals());
+                    System.out.println("Points scored: " + playerStats.getPoints());
+                    System.out.println("Assists made: " + playerStats.getPoints());
+                    System.out.println("Blocks made: " + playerStats.getPoints());
+                    System.out.println("Steals made: " + playerStats.getPoints());
                 } else {
                     System.out.println("Maybe next time! Goodbye.");
                 }

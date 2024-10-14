@@ -1,13 +1,13 @@
-//package FantasyBallerz;
+package fantasyBallerz;
 
 import java.util.Random;
 
-public class pointGuard extends myplayer {
+public class shootingGuard extends myplayer {
 
 
-    public pointGuard() {
+    public shootingGuard() {
         super();
-        setPosition("point guard");
+        setPosition("shooting guard");
     }
 
 
@@ -41,7 +41,7 @@ public int getAssists(){
 public int getPoints(){
     Random random = new Random();
     int points=0;
-    if (getWeight() > 185 && getAbility().equalsIgnoreCase("shot creator") || getAbility().equalsIgnoreCase("Slasher")){
+    if (getWeight() > 185 && getAbility().equalsIgnoreCase("shot creator") || getAbility().equalsIgnoreCase("Sharpshooter")){
         points = (random.nextInt(20, 51));
     }
     if (getWeight() > 185 && getAbility().equalsIgnoreCase("shot creator") || getAbility().equalsIgnoreCase("Slasher")){
@@ -75,11 +75,11 @@ public int getSteals(){
     int steals = 0;
     Random random = new Random();
     if (getAbility().equalsIgnoreCase("shot creator") || getAbility().equalsIgnoreCase("Slasher")){
-        steals = random.nextInt(4, 8);
+        steals = random.nextInt(3, 7);
     }
   
     else {
-        steals = random.nextInt(0, 5);
+        steals = random.nextInt(0, 4);
 
 }
     return steals;

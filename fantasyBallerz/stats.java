@@ -1,4 +1,4 @@
-//package fantasyBallerz;
+package fantasyBallerz;
 /**
  * Inner class representing player statistics like points, rebounds, and assists.
  */

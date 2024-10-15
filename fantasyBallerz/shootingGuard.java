@@ -5,8 +5,8 @@ import java.util.Random;
 public class shootingGuard extends myplayer {
 
 
-    public shootingGuard() {
-        super();
+    public shootingGuard(String name, int rating, double height, double weight, String ability) {
+        super(name, rating, height, weight, ability);
         setPosition("shooting guard");
     }
 

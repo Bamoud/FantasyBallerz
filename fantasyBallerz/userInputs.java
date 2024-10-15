@@ -22,7 +22,7 @@ public class userInputs extends myplayer implements storyLine {
         "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", 
         "Toronto Raptors", "Utah Jazz", "Washington Wizards"
     };
-
+    stats playerStats = new stats();
     /**
      * Constructor to initialize user input fields for a player.
      *
@@ -40,6 +40,7 @@ public class userInputs extends myplayer implements storyLine {
      * Main game loop that drives the player's career simulation.
      */
     public void gameLoop() {
+
         System.out.println("Welcome To Fantasy Ballerz!");
         Scanner scanner = new Scanner(System.in);
         boolean keepPlaying = true;
@@ -64,6 +65,8 @@ public class userInputs extends myplayer implements storyLine {
 
         // Initialize the player object
         userInputs player = new userInputs(name, 0, height, weight, ability);
+        player.setPosition(getPosition());
+        updateStats(player);
 
         // Check if a valid position was assigned
         if (!player.getPosition().equals("")) {
@@ -79,24 +82,22 @@ public class userInputs extends myplayer implements storyLine {
 
             System.out.println("Do you want to enter the draft? (yes/no)");
             String enterDraft = scanner.next();
+            System.out.println("Congratulations! You've entered the draft.");
+            int draftpick = draftPick(getRating());
+            String draftedTeam = player.chooseNBATeam();
 
+            System.out.println("Projected draft pick: " + draftpick + " to the " + draftedTeam);
             for (int year = 1; year <= 15 && keepPlaying; year++) {
                 System.out.println("Year " + year + ":");
 
                 if (enterDraft.equalsIgnoreCase("yes")) {
-                    System.out.println("Congratulations! You've entered the draft.");
-                    int draftpick = draftPick(getRating());
-                    String draftedTeam = player.chooseNBATeam();
-
-                    System.out.println("Projected draft pick: " + draftpick + " to the " + draftedTeam);
 
                     // Generate and display player statistics for the year
-                    stats playerStats = new stats();
                     System.out.println("Your Stats for this year:");
                     System.out.println("Points scored: " + playerStats.getPoints());
-                    System.out.println("Assists made: " + playerStats.getPoints());
-                    System.out.println("Blocks made: " + playerStats.getPoints());
-                    System.out.println("Steals made: " + playerStats.getPoints());
+                    System.out.println("Assists made: " + playerStats.getAssists());
+                    System.out.println("Blocks made: " + playerStats.getBlocks());
+                    System.out.println("Steals made: " + playerStats.getSteals());
                 } else {
                     System.out.println("Maybe next time! Goodbye.");
                 }
@@ -104,6 +105,7 @@ public class userInputs extends myplayer implements storyLine {
                 if (year < 15) {
                     System.out.println("Do you want to keep playing? (yes/no)");
                     String continuePlaying = scanner.next();
+                    updateStats(player);
                     if (!continuePlaying.equalsIgnoreCase("yes")) {
                         keepPlaying = false;
                         System.out.print("Goodbye");
@@ -134,6 +136,7 @@ public class userInputs extends myplayer implements storyLine {
         } else {
             setPosition("Point Guard");
         }
+        System.out.println(getPosition());
     }
 
     /**
@@ -192,6 +195,50 @@ public class userInputs extends myplayer implements storyLine {
     public String chooseNBATeam() {
         Random random = new Random();
         return NBA_TEAMS[random.nextInt(NBA_TEAMS.length)];
+    }
+
+    public void updateStats(myplayer player){
+        if(player.getPosition().toLowerCase().equals("point guard")){
+            pointGuard newPlayer = new pointGuard(player.getName(), player.getRating(), player.getHeight(), player.getWeight(), player.getAbility());
+            int points = newPlayer.getPoints();
+            int blocks = newPlayer.getBlocks();
+            int steals = newPlayer.getSteals();
+            int rebounds = newPlayer.getRebounds();
+            int assists = newPlayer.getAssists();
+            playerStats = new stats(points, rebounds, steals, blocks, assists);
+        }else if(player.getPosition().toLowerCase().equals("power foward")){
+            powerForward newPlayer = new powerForward(player.getName(), player.getRating(), player.getHeight(), player.getWeight(), player.getAbility());
+            int points = newPlayer.getPoints();
+            int blocks = newPlayer.getBlocks();
+            int steals = newPlayer.getSteals();
+            int rebounds = newPlayer.getRebounds();
+            int assists = newPlayer.getAssists();
+            playerStats = new stats(points, rebounds, steals, blocks, assists);
+        }else if(player.getPosition().toLowerCase().equals("shooting guard")){
+            shootingGuard newPlayer = new shootingGuard(player.getName(), player.getRating(), player.getHeight(), player.getWeight(), player.getAbility());
+            int points = newPlayer.getPoints();
+            int blocks = newPlayer.getBlocks();
+            int steals = newPlayer.getSteals();
+            int rebounds = newPlayer.getRebounds();
+            int assists = newPlayer.getAssists();
+            playerStats = new stats(points, rebounds, steals, blocks, assists);
+        }else if(player.getPosition().toLowerCase().equals("small forward")){
+            smallForward newPlayer = new smallForward(player.getName(), player.getRating(), player.getHeight(), player.getWeight(), player.getAbility());
+            int points = newPlayer.getPoints();
+            int blocks = newPlayer.getBlocks();
+            int steals = newPlayer.getSteals();
+            int rebounds = newPlayer.getRebounds();
+            int assists = newPlayer.getAssists();
+            playerStats = new stats(points, rebounds, steals, blocks, assists);
+        }else if(player.getPosition().toLowerCase().equals( "center")){
+            center newPlayer = new center(player.getName(), player.getRating(), player.getHeight(), player.getWeight(), player.getAbility());
+            int points = newPlayer.getPoints();
+            int blocks = newPlayer.getBlocks();
+            int steals = newPlayer.getSteals();
+            int rebounds = newPlayer.getRebounds();
+            int assists = newPlayer.getAssists();
+            playerStats = new stats(points, rebounds, steals, blocks, assists);
+        }    
     }
 }
 

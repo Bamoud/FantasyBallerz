@@ -5,8 +5,8 @@ import java.util.Random;
 public class powerForward extends myplayer {
 
 
-    public powerForward() {
-        super();
+    public powerForward(String name, int rating, double height, double weight, String ability) {
+        super(name, rating, height, weight, ability);
         setPosition("powerForward");
     }
 

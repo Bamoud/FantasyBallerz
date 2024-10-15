@@ -5,8 +5,8 @@ import java.util.Random;
 public class center extends myplayer {
 
 
-    public center() {
-        super();
+    public center(String name, int rating, double height, double weight, String ability) {
+        super(name, rating, height, weight, ability);
         setPosition("center");
     }
 

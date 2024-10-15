@@ -81,6 +81,11 @@ public class gameChoices implements storyLine{
                 System.out.println("Invalid choice. Try again.");
         }
     }
+
+    public static void main(String[] args) {
+        userInputs test = new userInputs("test", 0, 0, 0, null);
+        test.gameLoop();
+    }
 }
 
 

@@ -5,8 +5,8 @@ import java.util.Random;
 public class smallForward extends myplayer {
 
 
-    public smallForward() {
-        super();
+    public smallForward(String name, int rating, double height, double weight, String ability) {
+        super(name, rating, height, weight, ability);
         setPosition("smallForward");
     }
 

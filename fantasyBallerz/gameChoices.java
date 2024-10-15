@@ -1,6 +1,7 @@
 package fantasyBallerz;
 
-import java.util.scanner;
+
+import java.util.*;
 
 public class gameChoices implements storyLine{
     private String position;
@@ -11,14 +12,16 @@ public class gameChoices implements storyLine{
     public String getPosition() {
         return position; 
     }
-
     @Override
+    public String getName(){
+        return "test";
+    }
     public String getChoice() {
-        return choice;  
+        return choices;  
     }
 
     public void inGameChoice() {
-        Random num = new Random();
+        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Go for the point");
@@ -30,7 +33,7 @@ public class gameChoices implements storyLine{
 
         switch (userChoice) {
             case 1:
-                choice = "Shot";
+                choices = "Shot";
                 if (random.nextInt(0, 4) == 3){
                     System.out.println("you made a three");
                 }
@@ -39,24 +42,25 @@ public class gameChoices implements storyLine{
                 }
                 else if (random.nextInt(0, 4) == 1){
                     System.out.println("you made a layup");
+                }
                 else {
-                    System.out.println("you got stripped, LOSER!")
+                    System.out.println("you got stripped, LOSER!");
                 }
                 break;
             case 2:
-                choice = "pass";
+                choices = "pass";
                 if (random.nextInt(0, 3) == 2){
                 System.out.println("you're teammate got the ball and scored");
                 }
                 else if (random.nextInt(0, 3) == 1){
-                    System.out.println("A defender stole the ball and took it cost to cost, LOSER")
+                    System.out.println("A defender stole the ball and took it cost to cost, LOSER");
                 }
                 else {
-                    System.out.println("You thought the referee was your teamate and threw the ball at him")
+                    System.out.println("You thought the referee was your teamate and threw the ball at him");
                 }
                 break;
             case 3:
-                choice = "Get shifty and figure it out.";
+                choices = "Get shifty and figure it out.";
                 if (random.nextInt(0, 5) == 4){
                     System.out.println("You took your defenders ankles and scored.");
                 }
@@ -70,7 +74,7 @@ public class gameChoices implements storyLine{
                     System.out.println("Your dribbled through the whole team and got a between the legs poster on your defender (probobly on Rudy Gobert's trash ass)");
                 }
                 else {
-                    System.out.println("YOU GOT STRIPPED..... LOSER!!!")
+                    System.out.println("YOU GOT STRIPPED..... LOSER!!!");
                 }
                 break;
             default:
@@ -78,8 +82,6 @@ public class gameChoices implements storyLine{
         }
     }
 }
-    }
-
 
 
 

@@ -85,19 +85,36 @@ public class userInputs extends myplayer implements storyLine {
             System.out.println("Congratulations! You've entered the draft.");
             int draftpick = draftPick(getRating());
             String draftedTeam = player.chooseNBATeam();
-
+            int points = 0;
+            int blocks = 0;
+            int assists = 0;
+            int steals = 0;
+            int rebounds = 0;
+            int year = 1;
             System.out.println("Projected draft pick: " + draftpick + " to the " + draftedTeam);
-            for (int year = 1; year <= 15 && keepPlaying; year++) {
+            for (year = 1; year <= 15 && keepPlaying; year++) {
                 System.out.println("Year " + year + ":");
 
                 if (enterDraft.equalsIgnoreCase("yes")) {
-
                     // Generate and display player statistics for the year
+                    int newpoints =  playerStats.getPoints() * 72;
+                    int newblocks =  playerStats.getAssists() * 72;
+                    int newsteals =  playerStats.getSteals() * 72;
+                    int newassists = playerStats.getAssists() * 72;
+                    int newrebounds = playerStats.getRebounds() * 72;
+
                     System.out.println("Your Stats for this year:");
-                    System.out.println("Points scored: " + playerStats.getPoints());
-                    System.out.println("Assists made: " + playerStats.getAssists());
-                    System.out.println("Blocks made: " + playerStats.getBlocks());
-                    System.out.println("Steals made: " + playerStats.getSteals());
+                    System.out.println("Points scored: " + newpoints);
+                    System.out.println("Assists made: " + newassists);
+                    System.out.println("Blocks made: " + newblocks);
+                    System.out.println("Steals made: " + newsteals);
+                    System.out.println("Rebounds made: " + newrebounds);
+
+                    points +=  newpoints;
+                    blocks +=  newblocks;
+                    steals +=  newsteals;
+                    assists += newassists;
+                    rebounds +=newrebounds;
                 } else {
                     System.out.println("Maybe next time! Goodbye.");
                 }
@@ -108,10 +125,22 @@ public class userInputs extends myplayer implements storyLine {
                     updateStats(player);
                     if (!continuePlaying.equalsIgnoreCase("yes")) {
                         keepPlaying = false;
-                        System.out.print("Goodbye");
+                        System.out.println("Goodbye");
                     }
                 }
             }
+            System.out.println("All time stats");
+            System.out.println("Points scored: " + points);
+            System.out.println("Assists made: " + assists);
+            System.out.println("Blocks made: " + blocks);
+            System.out.println("Steals made: " + steals);
+            System.out.println("Rebounds made: " + rebounds);
+            System.out.println("Average Stats over the years");
+            System.out.println("Points scored: " + (points * 1.0)/(year* 1.0));
+            System.out.println("Assists made: " + (assists * 1.0)/(year* 1.0));
+            System.out.println("Blocks made: " + (blocks* 1.0)/(year* 1.0));
+            System.out.println("Steals made: " + (steals* 1.0)/(year* 1.0));
+            System.out.println("Rebounds made: " + (rebounds* 1.0)/(year* 1.0));
         }
         scanner.close();
     }

@@ -1,68 +1,64 @@
 package fantasyBallerz;
 
 import java.util.*;
-public class gameChoices implements storyLine{
+
+public class gameChoices implements storyLine {
     private String position;
     private String choices;
 
-    public String getName(){
+    public String getName() {
         return "";
     }
+
     public String getPosition() {
-        return position; 
+        return position;
     }
 
     public String getChoice() {
-        return choices;  
+        return choices;
     }
-    public void takeShot()  {
+
+    public void takeShot() {
         Random random = new Random();
-        if (random.nextInt(0, 4) == 3){
+        if (random.nextInt(0, 4) == 3) {
             System.out.println("you made a three");
-        }
-        else if (random.nextInt(0, 4) == 2){
+        } else if (random.nextInt(0, 4) == 2) {
             System.out.println("you made a mid range shot");
-        }
-        else if (random.nextInt(0, 4) == 1){
+        } else if (random.nextInt(0, 4) == 1) {
             System.out.println("you made a layup");
-        }
-        else {
+        } else {
             System.out.println("you got stripped, LOSER!");
         }
     }
+
     public void passBall() {
         Random random = new Random();
-        if (random.nextInt(0, 3) == 2){
-        System.out.println("you're teammate got the ball and scored");
-        }
-        else if (random.nextInt(0, 3) == 1){
+        if (random.nextInt(0, 3) == 2) {
+            System.out.println("you're teammate got the ball and scored");
+        } else if (random.nextInt(0, 3) == 1) {
             System.out.println("A defender stole the ball and took it cost to cost, LOSER");
-        }
-        else {
+        } else {
             System.out.println("You thought the referee was your teamate and threw the ball at him");
         }
     }
 
     public void getShifty() {
         Random random = new Random();
-        if (random.nextInt(0, 5) == 4){
+        if (random.nextInt(0, 5) == 4) {
             System.out.println("You took your defenders ankles and scored.");
-        }
-        else if (random.nextInt(0, 5) == 3){
+        } else if (random.nextInt(0, 5) == 3) {
             System.out.println("You took your defenders ankles but missed the shot");
-        }
-        else if (random.nextInt(0, 5) == 2){
+        } else if (random.nextInt(0, 5) == 2) {
             System.out.println("You were dribbling alot and ended up slipping and looking goofy");
-        }
-        else if (random.nextInt(0, 5) == 1){
-            System.out.println("Your dribbled through the whole team and got a between the legs poster on your defender (probobly on Rudy Gobert's trash ass)");
-        }
-        else {
+        } else if (random.nextInt(0, 5) == 1) {
+            System.out.println(
+                    "Your dribbled through the whole team and got a between the legs poster on your defender (probobly on Rudy Gobert's trash ass)");
+        } else {
             System.out.println("YOU GOT STRIPPED..... LOSER!!!");
         }
 
-    
-}
+    }
+
     public void inGameChoice() {
         Scanner scanner = new Scanner(System.in);
 
@@ -88,12 +84,12 @@ public class gameChoices implements storyLine{
                 break;
             default:
                 System.out.println("Invalid choice. Try again.");
-        
+
+        }
+    }
+
+    public static void main(String[] args) {
+        userInputs testRun = new userInputs(null, 0, 0, 0, null);
+        testRun.gameLoop();
     }
 }
-    }
-
-
-
-
-

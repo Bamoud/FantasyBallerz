@@ -40,6 +40,7 @@ public class userInputs extends myplayer implements storyLine {
      * Main game loop that drives the player's career simulation.
      */
     public void gameLoop() {
+        System.out.println("Welcome To Fantasy Ballerz!");
         Scanner scanner = new Scanner(System.in);
         boolean keepPlaying = true;
 

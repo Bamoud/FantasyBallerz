@@ -1,26 +1,22 @@
 package fantasyBallerz;
 
-
 import java.util.*;
-
 public class gameChoices implements storyLine{
     private String position;
     private String choices;
 
-
-    @Override
+    public String getName(){
+        return "";
+    }
     public String getPosition() {
         return position; 
     }
-    @Override
-    public String getName(){
-        return "test";
-    }
+
     public String getChoice() {
         return choices;  
     }
     public void takeShot()  {
-            
+        Random random = new Random();
         if (random.nextInt(0, 4) == 3){
             System.out.println("you made a three");
         }
@@ -31,11 +27,11 @@ public class gameChoices implements storyLine{
             System.out.println("you made a layup");
         }
         else {
-            System.out.println("you got stripped, LOSER!")
+            System.out.println("you got stripped, LOSER!");
         }
     }
-public void passBall() {
-        
+    public void passBall() {
+        Random random = new Random();
         if (random.nextInt(0, 3) == 2){
         System.out.println("you're teammate got the ball and scored");
         }
@@ -48,6 +44,7 @@ public void passBall() {
     }
 
     public void getShifty() {
+        Random random = new Random();
         if (random.nextInt(0, 5) == 4){
             System.out.println("You took your defenders ankles and scored.");
         }
@@ -67,26 +64,35 @@ public void passBall() {
     
 }
     public void inGameChoice() {
-        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("1. Go for the point");
+        System.out.println("1. Take the Shot");
         System.out.println("2. Pass the ball");
         System.out.println("3. Get shifty and figure it out.");
 
         System.out.print("Enter your choice (1/2/3): ");
         int userChoice = scanner.nextInt();
 
-        
-        default:
+        switch (userChoice) {
+            case 1:
+                choices = "Take the Shot";
+                takeShot();
+                break;
+            case 2:
+                choices = "Pass the ball";
+                passBall();
+                break;
+            case 3:
+                choices = "Get shifty and figure it out";
+                getShifty();
+                break;
+            default:
                 System.out.println("Invalid choice. Try again.");
-    }
-
-    public static void main(String[] args) {
-        userInputs test = new userInputs("test", 0, 0, 0, null);
-        test.gameLoop();
+        
     }
 }
+    }
+
 
 
 

@@ -110,6 +110,7 @@ public class userInputs extends myplayer implements storyLine {
                 }
             }
         }
+        scanner.close();
     }
 
     /**

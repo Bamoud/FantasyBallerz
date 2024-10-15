@@ -1,6 +1,7 @@
 package fantasyBallerz;
 
-import java.util.scanner;
+
+import java.util.*;
 
 public class gameChoices implements storyLine{
     private String position;
@@ -11,10 +12,12 @@ public class gameChoices implements storyLine{
     public String getPosition() {
         return position; 
     }
-
     @Override
+    public String getName(){
+        return "test";
+    }
     public String getChoice() {
-        return choice;  
+        return choices;  
     }
     public void takeShot()  {
             
@@ -64,7 +67,7 @@ public void passBall() {
     
 }
     public void inGameChoice() {
-        Random num = new Random();
+        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Go for the point");
@@ -78,9 +81,12 @@ public void passBall() {
         default:
                 System.out.println("Invalid choice. Try again.");
     }
-}
-    }
 
+    public static void main(String[] args) {
+        userInputs test = new userInputs("test", 0, 0, 0, null);
+        test.gameLoop();
+    }
+}
 
 
 

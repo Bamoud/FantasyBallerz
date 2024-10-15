@@ -5,8 +5,8 @@ import java.util.Random;
 public class pointGuard extends myplayer {
 
 
-    public pointGuard() {
-        super();
+    public pointGuard(String name, int rating, double height, double weight, String ability) {
+        super(name, rating, height, weight, ability);
         setPosition("point guard");
     }
 
